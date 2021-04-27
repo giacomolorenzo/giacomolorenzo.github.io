@@ -1,6 +1,3 @@
-[submodule "themes/Zzo"]
-	path = themes/Zzo
-	url = https://github.com/zzossig/hugo-theme-zzo
 [submodule "themes/notepadium"]
 	path = themes/notepadium
-	url = https://github.com/cntrump/notepadium
+	url = https://github.com/cntrump/hugo-notepadium
