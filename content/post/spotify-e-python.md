@@ -1,5 +1,5 @@
 +++
-title = "Estraiamo i dati da Spotify con Python"
+title = "Estraiamo i dati da Spotify con Python (Work in progress)"
 date = "2021-04-27T17:07:30+02:002"
 draft = false
 author = "Giacomo Lorenzo"
