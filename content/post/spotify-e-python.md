@@ -1,5 +1,5 @@
 +++
-title = "Estraiamo i dati da Spotify con Python (Work in progress)"
+title = "Estraiamo i dati da Spotify con Python"
 date = "2021-04-27T17:07:30+02:002"
 draft = false
 author = "Giacomo Lorenzo"
@@ -293,3 +293,68 @@ print(song_df)
 19                Ride It       Regard      2021-04-13T12:27:54Z  2021-04-13
 ```
 
+## Validazione
+
+Usiamo un semplice if per validare i dati in modo che non sia null.
+
+```python
+#Validate
+    if check_if_valid_data(song_df):
+        print("Data valid, proceed to Load stage")
+```
+
+## Load
+
+Adesso carichiamo i dati su un db locale tipo SQLite3:
+
+```python
+    engine = sqlalchemy.create_engine(DATABASE_LOCATION)
+    conn = sqlite3.connect('my_played_tracks.sqlite')
+    cursor = conn.cursor()
+
+    sql_query = """
+    CREATE TABLE IF NOT EXISTS my_played_tracks(
+        song_name VARCHAR(200),
+        artist_name VARCHAR(200),
+        played_at VARCHAR(200),
+        timestamp VARCHAR(200),
+        CONSTRAINT primary_key_constraint PRIMARY KEY (played_at)
+    ) """
+
+    cursor.execute(sql_query)
+    print("Opened database succesfully")
+
+    try:
+        song_df.to_sql("my_played_tracks", engine, index=False, if_exists='append')
+    except:
+        print("Data alredy exists in the database")
+
+    conn.close()
+
+    print("Close database successfully")
+```
+
+### Analizziamo il codice della load
+
+```python
+engine = sqlalchemy.create_engine(DATABASE_LOCATION)
+```
+questo effettuerà la chiamata al motore sqllite della libreria sqlalchemy e come parametro gli verrà passato la destinazione di dove verrà salvato il file.
+
+```python
+conn = sqlite3.connect('my_played_tracks.sqlite')
+    cursor = conn.cursor()
+```
+mi connetto al mio database con il primo comando mentre con il secondo preparo il [cursore](https://it.wikipedia.org/wiki/Cursore_(basi_di_dati)
+
+```python
+try:
+        song_df.to_sql("my_played_tracks", engine, index=False, if_exists='append')
+    except:
+        print("Data alredy exists in the database")
+```
+qui cosa facciamo tramite un [try catch](https://www.w3schools.com/python/python_try_except.asp) effettuiamo un inserimento del nostro datafram direttamente in sql pandas ci da l'opportunità di trasformare il nostro codice in sql e poi passandogli anche l'engine come parametro scrive direttamente sul db.
+
+## Conclusioni
+
+Adesso avete tutte le caratteristiche per far in modo che un set di dati da spotify possiate salvarlo su un db e quindi tramite un cronjob o altri strumenti di cui parlaremo in altro post eseguire lo script in modo continuo.
