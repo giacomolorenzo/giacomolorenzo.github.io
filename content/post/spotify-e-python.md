@@ -1,5 +1,6 @@
 +++
 title = "Estraiamo i dati da Spotify con Python"
+cover = "/images/cover-pythonspotify.jpg"
 date = "2021-04-27T17:07:30+02:002"
 draft = false
 author = "Giacomo Lorenzo"
@@ -12,6 +13,7 @@ tags = [
 categories = [
     "Python"
 ]
+imgs = ["../../images/spotify.png","../../images/python.png"]
 +++
 
 ## Mini guida per estrarre i dati delle ultime canzoni ascoltate da spotify

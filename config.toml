@@ -3,10 +3,10 @@ title = "Giacomo Lorenzo programming blog"
 theme = "notepadium"
 copyright = "©2020 Notepadium."
 
-languageCode = "it"  # for the RSS generation
+languageCode = "it-it"  # for the RSS generation
 defaultContentLanguage = "it"
 
-hasCJKLanguage = true
+hasCJKLanguage = false
 
 enableRobotsTXT = true
 
@@ -33,7 +33,6 @@ style = "auto"  # default: auto. light: light theme, dark: dark theme, auto: bas
 dateFormat = "Jan 02, 2006"  # if unset, default is "2006-01-02"
 readingTime = false  # show reading time after article date
 logo = ""
-slogan = "100% JavaScript-free"
 #license = "<a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt=Creative Commons License style=border-width:0 src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png /></a><br />This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>."
 ipv6ready = true
 
@@ -53,7 +52,7 @@ enable = false # load math globally, default: false. You can always enable math 
 use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
 
 [params.syntax]
-use = "none"  # builtin: "prismjs", "hljs". "none" means Chroma
+use = "prismjs"  # builtin: "prismjs", "hljs". "none" means Chroma
 theme = "github"
 darkTheme = "dracula"
 
@@ -62,8 +61,8 @@ darkTheme = "dracula"
   avatar = "https://secure.gravatar.com/avatar/a34726467b82c334a63b6ec750049e6c?size=200"
   name = "Giacomo Lorenzo"
   bio = "La mia passione più grande è provare delle cose nuove."  # support markdown syntax
-  twitter = "myTwitter"  # https://twitter.com/giacomolorenzo4
-  github = "myGithub"  # https://github.com/giacomolorenzo
+  twitter = "giacomolorenzo4"  # https://twitter.com/giacomolorenzo4
+  github = "giacomolorenzo"  # https://github.com/giacomolorenzo
 
 [params.nav]
 showCategories = true       # /categories/

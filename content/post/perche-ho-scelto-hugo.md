@@ -1,5 +1,6 @@
 +++
-title = "Perchè ho Scelto Hugo"
+title = "Perchè ho scelto Hugo"
+cover = "/images/hugo.jpg"
 date = "2021-04-27T12:57:30+02:002"
 draft = false
 author = "Giacomo Lorenzo"
@@ -13,6 +14,7 @@ tags = [
 categories = [
     "js-sites"
 ]
+imgs = ["../../images/hugo.jpg"]
 +++
 
 # Hugo
